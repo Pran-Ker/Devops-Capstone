@@ -1,4 +1,4 @@
-# Cloud Native Orchestration
+# Cloud Devops Project
 
 *Capstone project for Udacity's Cloud DevOps Nanodegree*
 
@@ -39,12 +39,6 @@ Deployment encapsulate both Replica Sets and Pods, providing a declarative metho
 
 Through the `kubectl` interface, the Deployment will check the current status of the cluster and make it match the desired state specified by the user.
 
-### Stateful Set
-
-Finally, we will introduce another Kubernetes framework called **Stateful Set**, used to manage *stateful applications* such as databases. In this [link](http://pauldone.blogspot.com/2017/06/deploying-mongodb-on-kubernetes-gke25.html) I found the best definition of them:
-
-> StatefulSets provides the capabilities of stable unique network hostnames and stable dedicated network storage volume mappings, essential for a database cluster to function properly and for data to exist and outlive the lifetime of inherently ephemeral containers.
-
 ### Persistent Volumes
 
 As explained in the [docs](https://kubernetes.io/docs/concepts/storage/persistent-volumes/), `PersistentVolume`s are pieces of storage that will be requested through `PersistentVolumeClaim`s.
@@ -52,6 +46,12 @@ As explained in the [docs](https://kubernetes.io/docs/concepts/storage/persisten
 </details>
 
 ---
+
+### Stateful Set
+
+Finally, we will introduce another Kubernetes framework called **Stateful Set**, used to manage *stateful applications* such as databases. In this [link](http://pauldone.blogspot.com/2017/06/deploying-mongodb-on-kubernetes-gke25.html) I found the best definition of them:
+
+> StatefulSets provides the capabilities of stable unique network hostnames and stable dedicated network storage volume mappings, essential for a database cluster to function properly and for data to exist and outlive the lifetime of inherently ephemeral containers.
 
 For any quick modifications to `app.py`, we can test locally by running a postgres Docker container:
 1. Run docker Postgres: `docker run -p 5432:5432 --name some-postgres -e POSTGRES_PASSWORD=mysecretpassword -d postgres`
